@@ -1,5 +1,5 @@
 Analysis & Synthesis report for viterbi_decoder
-Fri Apr 06 01:48:24 2018
+Fri Apr 06 03:05:39 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -13,10 +13,12 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |LUTable
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: LUTable:inst2
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -42,16 +44,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 06 01:48:24 2018      ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 06 03:05:39 2018      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; viterbi_decoder                            ;
-; Top-level Entity Name              ; LUTable                                    ;
+; Top-level Entity Name              ; test_block                                 ;
 ; Family                             ; Cyclone II                                 ;
 ; Total logic elements               ; 0                                          ;
 ;     Total combinational functions  ; 0                                          ;
 ;     Dedicated logic registers      ; 0                                          ;
 ; Total registers                    ; 0                                          ;
-; Total pins                         ; 72                                         ;
+; Total pins                         ; 89                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -65,7 +67,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; LUTable            ; viterbi_decoder    ;
+; Top-level entity name                                                      ; test_block         ; viterbi_decoder    ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -161,42 +163,50 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                       ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                         ; Library ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------+---------+
-; LUTable.v                        ; yes             ; User Verilog HDL File  ; C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/LUTable.v ;         ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                         ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------+---------+
+; LUTable.v                        ; yes             ; User Verilog HDL File              ; C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/LUTable.v                 ;         ;
+; start_edge_metric.v              ; yes             ; User Verilog HDL File              ; C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/start_edge_metric.v       ;         ;
+; full_stage1_edge_top.v           ; yes             ; User Verilog HDL File              ; C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/full_stage1_edge_top.v    ;         ;
+; full_stage2_edge_top.v           ; yes             ; User Verilog HDL File              ; C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/full_stage2_edge_top.v    ;         ;
+; full_stage1_edge_bottom.v        ; yes             ; User Verilog HDL File              ; C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/full_stage1_edge_bottom.v ;         ;
+; full_stage2_edge_bottom.v        ; yes             ; User Verilog HDL File              ; C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/full_stage2_edge_bottom.v ;         ;
+; final_stage.v                    ; yes             ; User Verilog HDL File              ; C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/final_stage.v             ;         ;
+; Viterbi_decoder_block.bdf        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/Viterbi_decoder_block.bdf ;         ;
+; test_block.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/test_block.bdf            ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-;                                             ;             ;
-; Total combinational functions               ; 0           ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 0           ;
-;     -- 3 input functions                    ; 0           ;
-;     -- <=2 input functions                  ; 0           ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 0           ;
-;     -- arithmetic mode                      ; 0           ;
-;                                             ;             ;
-; Total registers                             ; 0           ;
-;     -- Dedicated logic registers            ; 0           ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 72          ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-; Maximum fan-out node                        ; codeword[0] ;
-; Maximum fan-out                             ; 1           ;
-; Total fan-out                               ; 8           ;
-; Average fan-out                             ; 0.11        ;
-+---------------------------------------------+-------------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+;                                             ;            ;
+; Total combinational functions               ; 0          ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 0          ;
+;     -- 3 input functions                    ; 0          ;
+;     -- <=2 input functions                  ; 0          ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 0          ;
+;     -- arithmetic mode                      ; 0          ;
+;                                             ;            ;
+; Total registers                             ; 0          ;
+;     -- Dedicated logic registers            ; 0          ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 89         ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+; Maximum fan-out node                        ; code_in[7] ;
+; Maximum fan-out                             ; 1          ;
+; Total fan-out                               ; 8          ;
+; Average fan-out                             ; 0.09       ;
++---------------------------------------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -204,9 +214,488 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |LUTable                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 72   ; 0            ; |LUTable            ;              ;
+; |test_block                ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 89   ; 0            ; |test_block         ;              ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                             ;
++----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
+; Register name                                                              ; Reason for Removal                                                                ;
++----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
+; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m4[0..7]          ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m3[0..7]          ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m6[0..7]          ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m5[0..7]          ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|start_edge_metric:inst|m2[0..7]                 ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|start_edge_metric:inst|m1[0..7]                 ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|m4[0..7]             ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|m3[0..7]             ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|m6[0..7]             ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|m5[0..7]             ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|m8[0..7]                      ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|m7[0..7]                      ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_01[0..7]            ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_10[0..7]            ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0101[0..7]   ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0110[0..7]   ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1010[0..7]   ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1001[0..7]   ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_11[0..3]            ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_11[4]               ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_11[5..7]            ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|edge_met[0..3]       ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|edge_met[4]          ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|edge_met[5..7]       ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|edge_met[0..3]       ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|edge_met[4]          ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|edge_met[5..7]       ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|edge_met[0..3]                ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|edge_met[4]                   ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|edge_met[5..7]                ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_01[0..7] ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_10[0..7] ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0101[0..7]   ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0110[0..7]   ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1010[0..7]   ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1001[0..7]   ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_011[0..3]       ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_011[4]          ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_011[5..7]       ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_01[0..7]      ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_10[0..7]      ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|temp_c1[0,1]         ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|temp_c1[2,3]         ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_11[0..3]    ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_11[4]       ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_11[5..7]    ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c00[2,3]        ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c00[4,5]        ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|path_4[0..7]                  ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|path_3[0..7]                  ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_100[0..3,6,7]   ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_100[0..3,6,7]   ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|temp_c0[0..3]        ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_100[4,5]        ; Lost fanout                                                                       ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_00[0..7]    ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_00[0..3,6,7]     ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c11[2..5]       ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_011[0..3]       ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|path_1[0..3,6,7]              ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_11[0..3]         ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_100[4]          ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_100[5]          ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|path_2[0..3]                  ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_00[4]            ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|min_path[0..3]                ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|path_1[4]                     ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|shortest_path[0..3]           ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_011[4]          ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_011[5..7]       ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_11[4]            ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_11[5..7]         ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|path_2[4,6,7]                 ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|min_path[6,7]                 ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|shortest_path[6,7]            ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|path_2[5]                     ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|min_path[4]                   ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|shortest_path[4]              ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|temp_c01[0,2,3]   ; Merged with Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|temp_c01[1]  ;
+; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|temp_c10[1..3]    ; Merged with Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|temp_c10[0]  ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c001[0]      ; Merged with Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c001[1] ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c110[1]      ; Merged with Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c110[0] ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c110[3..5]   ; Merged with Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c110[2] ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c00[0]          ; Merged with Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c00[1]     ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_00[5]            ; Merged with Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c00[1]     ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c11[1]          ; Merged with Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c11[0]     ;
+; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|temp_c10[0]       ; Merged with Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|temp_c01[1]  ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c001[1]      ; Merged with Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|temp_c01[1]  ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c110[0]      ; Merged with Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|temp_c01[1]  ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c00[1]          ; Merged with Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|temp_c01[1]  ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c110[2]      ; Merged with Viterbi_decoder_block:inst|final_stage:inst6|path_1[5]                ;
+; Viterbi_decoder_block:inst|final_stage:inst6|path_1[5]                     ; Merged with Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c001[4] ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c001[5]      ; Merged with Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c001[4] ;
+; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|temp_c01[1]       ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c001[4]      ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c11[0]          ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|temp_codeword[1,3]            ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|temp_codeword[6]              ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|min_path[5]                   ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c001[2]      ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c001[3]      ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|shortest_path[5]              ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|codeword[1,3]                 ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|codeword[6]                   ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|temp_codeword[0,2,4,5]        ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|temp_codeword[7]              ; Stuck at VCC due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|codeword[0,2,4,5]             ; Stuck at GND due to stuck port data_in                                            ;
+; Viterbi_decoder_block:inst|final_stage:inst6|codeword[7]                   ; Stuck at VCC due to stuck port data_in                                            ;
+; Total Number of Removed Registers = 408                                    ;                                                                                   ;
++----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                           ;
++----------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------+
+; Register name                                                  ; Reason for Removal        ; Registers Removed due to This Register                                   ;
++----------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------+
+; Viterbi_decoder_block:inst|start_edge_metric:inst|m2[0]        ; Stuck at GND              ; Viterbi_decoder_block:inst|start_edge_metric:inst|m2[1],                 ;
+;                                                                ; due to stuck port data_in ; Viterbi_decoder_block:inst|start_edge_metric:inst|m2[2],                 ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|m2[3],                 ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|m2[4],                 ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|m2[5],                 ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|m2[6],                 ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|m2[7],                 ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_01[0],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_01[1],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_01[2],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_01[3],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_01[4],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_01[5],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_01[6],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_01[7],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_11[1],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_11[0],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_11[2],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_11[3],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_11[4],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_11[5],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_11[6],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_11[7],            ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_11[0],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_11[1],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_11[2],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_11[3],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_11[4],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_11[5],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_11[6],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_11[7],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_100[0],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_100[1],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_100[2],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_100[3],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_100[6],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_100[7],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|temp_c0[3],        ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|temp_c0[2],        ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|temp_c0[1],        ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|temp_c0[0],        ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_100[5],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_100[4],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_00[0],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_00[1],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_00[2],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_00[3],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_00[4],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_00[5],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_00[6],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|survivor_00[7],    ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c11[2],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c11[3],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c11[4],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c11[5],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_11[0],         ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_11[1],         ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_11[2],         ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_11[3],         ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_11[4],         ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_11[5],         ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_11[6],         ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_11[7],         ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c11[0]        ;
+; Viterbi_decoder_block:inst|final_stage:inst6|m8[0]             ; Stuck at GND              ; Viterbi_decoder_block:inst|final_stage:inst6|m8[1],                      ;
+;                                                                ; due to stuck port data_in ; Viterbi_decoder_block:inst|final_stage:inst6|m8[2],                      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|m8[3],                      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|m8[4],                      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|m8[5],                      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|m8[6],                      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|m8[7],                      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|edge_met[0],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|edge_met[1],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|edge_met[2],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|edge_met[3],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|edge_met[4],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|edge_met[5],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|edge_met[6],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|edge_met[7],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_4[0],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_4[1],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_4[2],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_4[3],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_4[4],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_4[5],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_4[6],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_4[7],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_2[0],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_2[1],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_2[2],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_2[3],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|min_path[0],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|min_path[1],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|min_path[2],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|min_path[3],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|shortest_path[1],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|shortest_path[0],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|shortest_path[2],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|shortest_path[3],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_2[6],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_2[7],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_2[4],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|min_path[6],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|min_path[7],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|shortest_path[6],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|shortest_path[7],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_2[5],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|min_path[4],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|shortest_path[4],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|temp_codeword[1],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|temp_codeword[3],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|min_path[5],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|shortest_path[5],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|codeword[1],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|codeword[3],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|temp_codeword[0],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|temp_codeword[2],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|codeword[0],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|codeword[2]                 ;
+; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|m6[0]    ; Stuck at GND              ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|m6[1],             ;
+;                                                                ; due to stuck port data_in ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|m6[2],             ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|m6[3],             ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|m6[4],             ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|m6[5],             ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|m6[6],             ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|m6[7],             ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|edge_met[0],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|edge_met[1],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|edge_met[2],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|edge_met[3],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|edge_met[4],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|edge_met[5],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|edge_met[6],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|edge_met[7],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_100[0],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_100[1],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_100[2],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_100[3],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_100[6],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_100[7],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_00[0],         ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_00[1],         ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_00[2],         ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_00[3],         ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_00[6],         ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_00[7],         ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_011[0],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_011[1],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_011[2],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_011[3],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_1[0],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_1[1],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_1[2],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_1[3],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_1[6],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_1[7],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_100[4],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_100[5],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|END_00[4],         ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_1[4],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_011[4],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_011[5],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_011[6],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|path_011[7]        ;
+; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|m4[0]    ; Stuck at GND              ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|m4[1],             ;
+;                                                                ; due to stuck port data_in ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|m4[2],             ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|m4[3],             ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|m4[4],             ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|m4[5],             ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|m4[6],             ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|m4[7],             ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|edge_met[0],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|edge_met[1],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|edge_met[2],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|edge_met[3],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|edge_met[4],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|edge_met[5],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|edge_met[6],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|edge_met[7],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_011[0],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_011[1],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_011[2],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_011[3],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_011[4],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_011[5],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_011[6],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|path_011[7],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|temp_c1[0],        ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|temp_c1[1],        ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|temp_c1[2],        ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_top:inst3|temp_c1[3],        ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c00[2],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c00[3],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c00[4],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_top:inst5|temp_c00[5],       ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|temp_codeword[6],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|codeword[6],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|temp_codeword[4],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|temp_codeword[5],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|temp_codeword[7],           ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|codeword[4],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|codeword[5],                ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|codeword[7]                 ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m6[0] ; Stuck at GND              ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m6[1],          ;
+;                                                                ; due to stuck port data_in ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m6[2],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m6[3],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m6[4],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m6[5],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m6[6],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m6[7],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0101[0],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0101[1],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0101[2],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0101[3],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0101[4],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0101[5],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0101[6],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0101[7],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1010[0],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1010[1],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1010[2],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1010[3],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1010[4],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1010[5],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1010[6],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1010[7],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_01[0],      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_01[1],      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_01[2],      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_01[3],      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_01[4],      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_01[5],      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_01[6],      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_01[7],      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c001[4],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c001[2],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|temp_c001[3]    ;
+; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m4[0] ; Stuck at GND              ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m4[1],          ;
+;                                                                ; due to stuck port data_in ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m4[2],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m4[3],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m4[4],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m4[5],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m4[6],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m4[7],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0101[0],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0101[1],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0101[2],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0101[3],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0101[4],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0101[5],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0101[6],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0101[7],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1010[0],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1010[1],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1010[2],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1010[3],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1010[4],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1010[5],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1010[6],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1010[7],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_01[0], ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_01[1], ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_01[2], ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_01[3], ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_01[4], ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_01[5], ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_01[6], ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_01[7], ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|temp_c01[1]     ;
+; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m3[0] ; Stuck at GND              ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m3[1],          ;
+;                                                                ; due to stuck port data_in ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m3[2],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m3[3],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m3[4],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m3[5],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m3[6],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|m3[7],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0110[0],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0110[1],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0110[2],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0110[3],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0110[4],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0110[5],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0110[6],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_0110[7],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1001[0],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1001[1],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1001[2],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1001[3],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1001[4],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1001[5],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1001[6],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|path_1001[7],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_10[0], ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_10[1], ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_10[2], ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_10[3], ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_10[4], ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_10[5], ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_10[6], ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2|survivor_10[7]  ;
+; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m5[0] ; Stuck at GND              ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m5[1],          ;
+;                                                                ; due to stuck port data_in ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m5[2],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m5[3],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m5[4],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m5[5],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m5[6],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|m5[7],          ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0110[0],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0110[1],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0110[2],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0110[3],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0110[4],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0110[5],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0110[6],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_0110[7],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1001[0],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1001[1],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1001[2],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1001[3],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1001[4],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1001[5],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1001[6],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|path_1001[7],   ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_10[0],      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_10[1],      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_10[2],      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_10[3],      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_10[4],      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_10[5],      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_10[6],      ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4|END_10[7]       ;
+; Viterbi_decoder_block:inst|final_stage:inst6|m7[0]             ; Stuck at GND              ; Viterbi_decoder_block:inst|final_stage:inst6|path_3[0],                  ;
+;                                                                ; due to stuck port data_in ; Viterbi_decoder_block:inst|final_stage:inst6|path_3[1],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_3[2],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_3[3],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_3[4],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_3[5],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_3[6],                  ;
+;                                                                ;                           ; Viterbi_decoder_block:inst|final_stage:inst6|path_3[7]                   ;
+; Viterbi_decoder_block:inst|start_edge_metric:inst|m1[0]        ; Stuck at GND              ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_10[0]             ;
+;                                                                ; due to stuck port data_in ;                                                                          ;
+; Viterbi_decoder_block:inst|start_edge_metric:inst|m1[1]        ; Stuck at GND              ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_10[1]             ;
+;                                                                ; due to stuck port data_in ;                                                                          ;
+; Viterbi_decoder_block:inst|start_edge_metric:inst|m1[2]        ; Stuck at GND              ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_10[2]             ;
+;                                                                ; due to stuck port data_in ;                                                                          ;
+; Viterbi_decoder_block:inst|start_edge_metric:inst|m1[3]        ; Stuck at GND              ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_10[3]             ;
+;                                                                ; due to stuck port data_in ;                                                                          ;
+; Viterbi_decoder_block:inst|start_edge_metric:inst|m1[4]        ; Stuck at GND              ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_10[4]             ;
+;                                                                ; due to stuck port data_in ;                                                                          ;
+; Viterbi_decoder_block:inst|start_edge_metric:inst|m1[5]        ; Stuck at GND              ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_10[5]             ;
+;                                                                ; due to stuck port data_in ;                                                                          ;
+; Viterbi_decoder_block:inst|start_edge_metric:inst|m1[6]        ; Stuck at GND              ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_10[6]             ;
+;                                                                ; due to stuck port data_in ;                                                                          ;
+; Viterbi_decoder_block:inst|start_edge_metric:inst|m1[7]        ; Stuck at GND              ; Viterbi_decoder_block:inst|start_edge_metric:inst|edge_10[7]             ;
+;                                                                ; due to stuck port data_in ;                                                                          ;
++----------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -224,13 +713,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |LUTable ;
-+----------------+---------+----------------------------------------------+
-; Parameter Name ; Value   ; Type                                         ;
-+----------------+---------+----------------------------------------------+
-; C              ; 0001000 ; Unsigned Binary                              ;
-+----------------+---------+----------------------------------------------+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LUTable:inst2 ;
++----------------+---------+---------------------------------+
+; Parameter Name ; Value   ; Type                            ;
++----------------+---------+---------------------------------+
+; C              ; 0001000 ; Unsigned Binary                 ;
++----------------+---------+---------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -249,9 +738,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Fri Apr 06 01:48:22 2018
+    Info: Processing started: Fri Apr 06 03:05:38 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off viterbi_decoder -c viterbi_decoder
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file /users/ms/documents/mcgill/2018_winter/ecse 436/sph/lab2/lab2/lab2/uniformrv32.v
+    Info (12023): Found entity 1: uniformRV32
+Info (12021): Found 1 design units, including 1 entities, in source file /users/ms/documents/mcgill/2018_winter/ecse 436/sph/lab2/lab2/lab2/noise_generator.bdf
+    Info (12023): Found entity 1: noise_generator
 Info (12021): Found 1 design units, including 1 entities, in source file lutable.v
     Info (12023): Found entity 1: LUTable
 Info (12021): Found 1 design units, including 1 entities, in source file noisecorrupt.v
@@ -270,73 +763,122 @@ Info (12021): Found 1 design units, including 1 entities, in source file final_s
     Info (12023): Found entity 1: final_stage
 Info (12021): Found 1 design units, including 1 entities, in source file viterbi_decoder_block.bdf
     Info (12023): Found entity 1: Viterbi_decoder_block
-Info (12127): Elaborating entity "LUTable" for the top level hierarchy
+Info (12021): Found 1 design units, including 1 entities, in source file test_block.bdf
+    Info (12023): Found entity 1: test_block
+Info (12127): Elaborating entity "test_block" for the top level hierarchy
+Info (12128): Elaborating entity "Viterbi_decoder_block" for hierarchy "Viterbi_decoder_block:inst"
+Warning (275083): Bus "temp_c00[5..0]" found using same base name as "temp_c0", which might lead to a name conflict.
+Warning (275083): Bus "temp_c11[5..0]" found using same base name as "temp_c1", which might lead to a name conflict.
+Warning (275080): Converted elements in bus name "temp_c0" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "temp_c0[3..0]" to "temp_c03..0"
+Warning (275080): Converted elements in bus name "temp_c00" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "temp_c00[5..0]" to "temp_c005..0"
+Warning (275080): Converted elements in bus name "temp_c1" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "temp_c1[3..0]" to "temp_c13..0"
+Warning (275080): Converted elements in bus name "temp_c11" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "temp_c11[5..0]" to "temp_c115..0"
+Warning (275083): Bus "temp_c110[5..0]" found using same base name as "temp_c11", which might lead to a name conflict.
+Warning (275083): Bus "temp_c001[5..0]" found using same base name as "temp_c00", which might lead to a name conflict.
+Warning (275080): Converted elements in bus name "temp_c00" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "temp_c00[5..0]" to "temp_c005..0"
+Warning (275080): Converted elements in bus name "temp_c001" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "temp_c001[5..0]" to "temp_c0015..0"
+Warning (275080): Converted elements in bus name "temp_c11" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "temp_c11[5..0]" to "temp_c115..0"
+Warning (275080): Converted elements in bus name "temp_c110" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "temp_c110[5..0]" to "temp_c1105..0"
+Info (12128): Elaborating entity "final_stage" for hierarchy "Viterbi_decoder_block:inst|final_stage:inst6"
+Info (12128): Elaborating entity "full_stage2_edge_top" for hierarchy "Viterbi_decoder_block:inst|full_stage2_edge_top:inst5"
+Info (12128): Elaborating entity "full_stage1_edge_top" for hierarchy "Viterbi_decoder_block:inst|full_stage1_edge_top:inst3"
+Info (12128): Elaborating entity "start_edge_metric" for hierarchy "Viterbi_decoder_block:inst|start_edge_metric:inst"
+Info (12128): Elaborating entity "full_stage2_edge_bottom" for hierarchy "Viterbi_decoder_block:inst|full_stage2_edge_bottom:inst4"
+Info (12128): Elaborating entity "full_stage1_edge_bottom" for hierarchy "Viterbi_decoder_block:inst|full_stage1_edge_bottom:inst2"
+Info (12128): Elaborating entity "LUTable" for hierarchy "LUTable:inst2"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "mapped_0[0]" is stuck at GND
-    Warning (13410): Pin "mapped_0[1]" is stuck at GND
-    Warning (13410): Pin "mapped_0[2]" is stuck at GND
-    Warning (13410): Pin "mapped_0[3]" is stuck at VCC
-    Warning (13410): Pin "mapped_0[4]" is stuck at GND
-    Warning (13410): Pin "mapped_0[5]" is stuck at GND
-    Warning (13410): Pin "mapped_0[6]" is stuck at GND
-    Warning (13410): Pin "mapped_1[0]" is stuck at GND
-    Warning (13410): Pin "mapped_1[1]" is stuck at GND
-    Warning (13410): Pin "mapped_1[2]" is stuck at GND
-    Warning (13410): Pin "mapped_1[3]" is stuck at VCC
-    Warning (13410): Pin "mapped_1[4]" is stuck at GND
-    Warning (13410): Pin "mapped_1[5]" is stuck at GND
-    Warning (13410): Pin "mapped_1[6]" is stuck at GND
-    Warning (13410): Pin "mapped_2[0]" is stuck at GND
-    Warning (13410): Pin "mapped_2[1]" is stuck at GND
-    Warning (13410): Pin "mapped_2[2]" is stuck at GND
-    Warning (13410): Pin "mapped_2[3]" is stuck at VCC
-    Warning (13410): Pin "mapped_2[4]" is stuck at GND
-    Warning (13410): Pin "mapped_2[5]" is stuck at GND
-    Warning (13410): Pin "mapped_2[6]" is stuck at GND
-    Warning (13410): Pin "mapped_3[0]" is stuck at GND
-    Warning (13410): Pin "mapped_3[1]" is stuck at GND
-    Warning (13410): Pin "mapped_3[2]" is stuck at GND
-    Warning (13410): Pin "mapped_3[3]" is stuck at VCC
-    Warning (13410): Pin "mapped_3[4]" is stuck at GND
-    Warning (13410): Pin "mapped_3[5]" is stuck at GND
-    Warning (13410): Pin "mapped_3[6]" is stuck at GND
-    Warning (13410): Pin "mapped_4[0]" is stuck at GND
-    Warning (13410): Pin "mapped_4[1]" is stuck at GND
-    Warning (13410): Pin "mapped_4[2]" is stuck at GND
-    Warning (13410): Pin "mapped_4[3]" is stuck at VCC
-    Warning (13410): Pin "mapped_4[4]" is stuck at GND
-    Warning (13410): Pin "mapped_4[5]" is stuck at GND
-    Warning (13410): Pin "mapped_4[6]" is stuck at GND
-    Warning (13410): Pin "mapped_5[0]" is stuck at GND
-    Warning (13410): Pin "mapped_5[1]" is stuck at GND
-    Warning (13410): Pin "mapped_5[2]" is stuck at GND
-    Warning (13410): Pin "mapped_5[3]" is stuck at VCC
-    Warning (13410): Pin "mapped_5[4]" is stuck at GND
-    Warning (13410): Pin "mapped_5[5]" is stuck at GND
-    Warning (13410): Pin "mapped_5[6]" is stuck at GND
-    Warning (13410): Pin "mapped_6[0]" is stuck at GND
-    Warning (13410): Pin "mapped_6[1]" is stuck at GND
-    Warning (13410): Pin "mapped_6[2]" is stuck at GND
-    Warning (13410): Pin "mapped_6[3]" is stuck at VCC
-    Warning (13410): Pin "mapped_6[4]" is stuck at GND
-    Warning (13410): Pin "mapped_6[5]" is stuck at GND
-    Warning (13410): Pin "mapped_6[6]" is stuck at GND
-    Warning (13410): Pin "mapped_7[0]" is stuck at GND
-    Warning (13410): Pin "mapped_7[1]" is stuck at GND
-    Warning (13410): Pin "mapped_7[2]" is stuck at GND
-    Warning (13410): Pin "mapped_7[3]" is stuck at VCC
-    Warning (13410): Pin "mapped_7[4]" is stuck at GND
-    Warning (13410): Pin "mapped_7[5]" is stuck at GND
-    Warning (13410): Pin "mapped_7[6]" is stuck at GND
+    Warning (13410): Pin "code_out[7]" is stuck at VCC
+    Warning (13410): Pin "code_out[6]" is stuck at VCC
+    Warning (13410): Pin "code_out[5]" is stuck at GND
+    Warning (13410): Pin "code_out[4]" is stuck at GND
+    Warning (13410): Pin "code_out[3]" is stuck at GND
+    Warning (13410): Pin "code_out[2]" is stuck at GND
+    Warning (13410): Pin "code_out[1]" is stuck at GND
+    Warning (13410): Pin "code_out[0]" is stuck at GND
+    Warning (13410): Pin "r1[6]" is stuck at GND
+    Warning (13410): Pin "r1[5]" is stuck at GND
+    Warning (13410): Pin "r1[4]" is stuck at GND
+    Warning (13410): Pin "r1[3]" is stuck at VCC
+    Warning (13410): Pin "r1[2]" is stuck at GND
+    Warning (13410): Pin "r1[1]" is stuck at GND
+    Warning (13410): Pin "r1[0]" is stuck at GND
+    Warning (13410): Pin "r2[6]" is stuck at GND
+    Warning (13410): Pin "r2[5]" is stuck at GND
+    Warning (13410): Pin "r2[4]" is stuck at GND
+    Warning (13410): Pin "r2[3]" is stuck at VCC
+    Warning (13410): Pin "r2[2]" is stuck at GND
+    Warning (13410): Pin "r2[1]" is stuck at GND
+    Warning (13410): Pin "r2[0]" is stuck at GND
+    Warning (13410): Pin "r3[6]" is stuck at GND
+    Warning (13410): Pin "r3[5]" is stuck at GND
+    Warning (13410): Pin "r3[4]" is stuck at GND
+    Warning (13410): Pin "r3[3]" is stuck at VCC
+    Warning (13410): Pin "r3[2]" is stuck at GND
+    Warning (13410): Pin "r3[1]" is stuck at GND
+    Warning (13410): Pin "r3[0]" is stuck at GND
+    Warning (13410): Pin "r4[6]" is stuck at GND
+    Warning (13410): Pin "r4[5]" is stuck at GND
+    Warning (13410): Pin "r4[4]" is stuck at GND
+    Warning (13410): Pin "r4[3]" is stuck at VCC
+    Warning (13410): Pin "r4[2]" is stuck at GND
+    Warning (13410): Pin "r4[1]" is stuck at GND
+    Warning (13410): Pin "r4[0]" is stuck at GND
+    Warning (13410): Pin "r5[6]" is stuck at GND
+    Warning (13410): Pin "r5[5]" is stuck at GND
+    Warning (13410): Pin "r5[4]" is stuck at GND
+    Warning (13410): Pin "r5[3]" is stuck at VCC
+    Warning (13410): Pin "r5[2]" is stuck at GND
+    Warning (13410): Pin "r5[1]" is stuck at GND
+    Warning (13410): Pin "r5[0]" is stuck at GND
+    Warning (13410): Pin "r6[6]" is stuck at GND
+    Warning (13410): Pin "r6[5]" is stuck at GND
+    Warning (13410): Pin "r6[4]" is stuck at GND
+    Warning (13410): Pin "r6[3]" is stuck at VCC
+    Warning (13410): Pin "r6[2]" is stuck at GND
+    Warning (13410): Pin "r6[1]" is stuck at GND
+    Warning (13410): Pin "r6[0]" is stuck at GND
+    Warning (13410): Pin "r7[6]" is stuck at GND
+    Warning (13410): Pin "r7[5]" is stuck at GND
+    Warning (13410): Pin "r7[4]" is stuck at GND
+    Warning (13410): Pin "r7[3]" is stuck at VCC
+    Warning (13410): Pin "r7[2]" is stuck at GND
+    Warning (13410): Pin "r7[1]" is stuck at GND
+    Warning (13410): Pin "r7[0]" is stuck at GND
+    Warning (13410): Pin "r8[6]" is stuck at GND
+    Warning (13410): Pin "r8[5]" is stuck at GND
+    Warning (13410): Pin "r8[4]" is stuck at GND
+    Warning (13410): Pin "r8[3]" is stuck at VCC
+    Warning (13410): Pin "r8[2]" is stuck at GND
+    Warning (13410): Pin "r8[1]" is stuck at GND
+    Warning (13410): Pin "r8[0]" is stuck at GND
+    Warning (13410): Pin "shortest_path[7]" is stuck at GND
+    Warning (13410): Pin "shortest_path[6]" is stuck at GND
+    Warning (13410): Pin "shortest_path[5]" is stuck at GND
+    Warning (13410): Pin "shortest_path[4]" is stuck at GND
+    Warning (13410): Pin "shortest_path[3]" is stuck at GND
+    Warning (13410): Pin "shortest_path[2]" is stuck at GND
+    Warning (13410): Pin "shortest_path[1]" is stuck at GND
+    Warning (13410): Pin "shortest_path[0]" is stuck at GND
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 72 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 64 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 57 warnings
-    Info: Peak virtual memory: 534 megabytes
-    Info: Processing ended: Fri Apr 06 01:48:24 2018
-    Info: Elapsed time: 00:00:02
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLK"
+Info (21057): Implemented 89 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 80 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 95 warnings
+    Info: Peak virtual memory: 531 megabytes
+    Info: Processing ended: Fri Apr 06 03:05:39 2018
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

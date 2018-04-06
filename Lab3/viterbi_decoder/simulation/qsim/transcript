@@ -1,0 +1,79 @@
+# do viterbi_decoder.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module test_block
+# 
+# Top level modules:
+# 	test_block
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module test_block_vlg_sample_tst
+# -- Compiling module test_block_vlg_check_tst
+# -- Compiling module test_block_vlg_vec_tst
+# 
+# Top level modules:
+# 	test_block_vlg_vec_tst
+# vsim -L cycloneii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.test_block_vlg_vec_tst 
+# Loading work.test_block_vlg_vec_tst
+# Loading work.test_block
+# Loading cycloneii_ver.cycloneii_io
+# Loading cycloneii_ver.cycloneii_mux21
+# Loading cycloneii_ver.cycloneii_dffe
+# Loading cycloneii_ver.cycloneii_asynch_io
+# Loading work.test_block_vlg_sample_tst
+# Loading work.test_block_vlg_check_tst
+# Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
+# ERROR! Vector Mismatch for output port r1[3] :: @time = 25000.000 ps
+#      Expected value = 00010000
+#      Real value = 00001000
+# ERROR! Vector Mismatch for output port r1[4] :: @time = 25000.000 ps
+#      Expected value = 00010000
+#      Real value = 00001000
+# ERROR! Vector Mismatch for output port r2[3] :: @time = 25000.000 ps
+#      Expected value = 10010000
+#      Real value = 10001000
+# ERROR! Vector Mismatch for output port r2[4] :: @time = 25000.000 ps
+#      Expected value = 10010000
+#      Real value = 10001000
+# ERROR! Vector Mismatch for output port r3[3] :: @time = 25000.000 ps
+#      Expected value = 10010000
+#      Real value = 10001000
+# ERROR! Vector Mismatch for output port r3[4] :: @time = 25000.000 ps
+#      Expected value = 10010000
+#      Real value = 10001000
+# ERROR! Vector Mismatch for output port r4[3] :: @time = 25000.000 ps
+#      Expected value = 00010000
+#      Real value = 00001000
+# ERROR! Vector Mismatch for output port r4[4] :: @time = 25000.000 ps
+#      Expected value = 00010000
+#      Real value = 00001000
+# ERROR! Vector Mismatch for output port r5[3] :: @time = 25000.000 ps
+#      Expected value = 00010000
+#      Real value = 00001000
+# ERROR! Vector Mismatch for output port r5[4] :: @time = 25000.000 ps
+#      Expected value = 00010000
+#      Real value = 00001000
+# ERROR! Vector Mismatch for output port r6[3] :: @time = 25000.000 ps
+#      Expected value = 00010000
+#      Real value = 10001000
+# ERROR! Vector Mismatch for output port r6[4] :: @time = 25000.000 ps
+#      Expected value = 00010000
+#      Real value = 10001000
+# ERROR! Vector Mismatch for output port r6[7] :: @time = 25000.000 ps
+#      Expected value = 00010000
+#      Real value = 10001000
+# ERROR! Vector Mismatch for output port r7[3] :: @time = 25000.000 ps
+#      Expected value = 10010000
+#      Real value = 10001000
+# ERROR! Vector Mismatch for output port r7[4] :: @time = 25000.000 ps
+#      Expected value = 10010000
+#      Real value = 10001000
+# ERROR! Vector Mismatch for output port r8[3] :: @time = 25000.000 ps
+#      Expected value = 10010000
+#      Real value = 10001000
+# ERROR! Vector Mismatch for output port r8[4] :: @time = 25000.000 ps
+#      Expected value = 10010000
+#      Real value = 10001000
+#          17 mismatched vectors : Simulation failed !
+# ** Note: $finish    : viterbi_decoder.vt(1643)
+#    Time: 1 us  Iteration: 0  Instance: /test_block_vlg_vec_tst/tb_out
