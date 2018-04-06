@@ -1,0 +1,32 @@
+module AWGN_Block(
+	left_channel_audio_in,
+	right_channel_audio_in,
+	vol,
+	audio_in_available,
+	audio_out_allowed,
+	CLK,
+	RST,
+	left_channel_audio_out,
+	right_channel_audio_out,
+	read_audio_in,
+	write_audio_out
+);
+
+
+
+input wire audio_in_available;
+input wire audio_out_allowed;
+input reg[3:0]counterVal;
+input reg[2:0]vol;
+input reg[31:0]left_channel_audio_in;
+input reg[31:0]right_channel_audio_in;
+ 
+output reg[31:0]left_channel_audio_out = 32'd0;
+output reg[31:0]right_channel_audio_out = 32'd0;
+output wire read_audio_in;
+output wire write_audio_out;
+
+always begin
+
+read_audio_in <= audio_in_available && audio_out_allowed;
+write_audio_out <= audio_in_available && audio_out_allowed;

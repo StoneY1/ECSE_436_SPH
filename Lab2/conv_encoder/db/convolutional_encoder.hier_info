@@ -1,0 +1,50 @@
+|conv_encode
+code[0] <= convolutional_encoder:inst.out[0]
+code[1] <= convolutional_encoder:inst.out[1]
+CLK => convolutional_encoder:inst.CLK
+
+
+|conv_encode|convolutional_encoder:inst
+out[0] <= XOR3:inst6.OUT
+out[1] <= XOR4:inst5.OUT
+CLK => inst.CLK
+CLK => counter4:inst8.CLK
+CLK => inst2.CLK
+CLK => inst1.CLK
+CLK => inst3.CLK
+
+
+|conv_encode|convolutional_encoder:inst|XOR4:inst5
+OUT <= 3.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 13.IN0
+IN2 => 13.IN1
+IN3 => 16.IN0
+IN4 => 16.IN1
+
+
+|conv_encode|convolutional_encoder:inst|bitgen:inst9
+SEL[0] => Decoder0.IN3
+SEL[1] => Decoder0.IN2
+SEL[2] => Decoder0.IN1
+SEL[3] => Decoder0.IN0
+bitstream <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|conv_encode|convolutional_encoder:inst|counter4:inst8
+CLK => Y[0]~reg0.CLK
+CLK => Y[1]~reg0.CLK
+CLK => Y[2]~reg0.CLK
+CLK => Y[3]~reg0.CLK
+Y[0] <= Y[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Y[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Y[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Y[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|conv_encode|convolutional_encoder:inst|XOR3:inst6
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+

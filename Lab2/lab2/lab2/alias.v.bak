@@ -1,0 +1,75 @@
+module alias_block(
+	left_channel_audio_in,
+	right_channel_audio_in,
+	vol,
+	
+	counterVal,
+	
+	left_channel_audio_out,
+	right_channel_audio_out
+);
+
+
+
+input wire[3:0]counterVal;
+input wire[2:0]vol;
+input wire[31:0]left_channel_audio_in;
+input wire[31:0]right_channel_audio_in;
+ 
+output reg[31:0]left_channel_audio_out = 32'd0;
+output reg[31:0]right_channel_audio_out = 32'd0;
+
+always begin
+
+
+case (vol)
+	
+	//2:1 
+	3'd1 : 
+			begin
+
+				if(counterVal == 4'bxxx0) begin
+					left_channel_audio_out[31:0] <= left_channel_audio_in[31:0];
+					right_channel_audio_out[31:0] <= right_channel_audio_in[31:0];
+				end else begin
+					left_channel_audio_out[31:0] <= 32'd0;
+					right_channel_audio_out[31:0] <= 32'd0;
+				end		
+			end
+	//4:1 
+	3'd2 : 
+		begin				
+				if(counterVal == 4'bxx00) begin
+					left_channel_audio_out[31:0] <= left_channel_audio_in[31:0];
+					right_channel_audio_out[31:0] <= right_channel_audio_in[31:0];
+				end else begin
+					left_channel_audio_out[31:0] <= 32'd0;
+					right_channel_audio_out[31:0] <= 32'd0;
+				end	
+		end
+	//8:1
+	3'd4 : 
+		begin
+
+				if(counterVal == 4'bx000) begin
+					left_channel_audio_out[31:0] <= left_channel_audio_in[31:0];
+					right_channel_audio_out[31:0] <= right_channel_audio_in[31:0];
+				end else begin
+					left_channel_audio_out[31:0] <= 32'd0;
+					right_channel_audio_out[31:0] <= 32'd0;
+				end	
+		end
+	
+
+	default: 
+			begin
+				left_channel_audio_out[31:0] <= left_channel_audio_in[31:0];
+				right_channel_audio_out[31:0] <= right_channel_audio_in[31:0];
+			end
+			
+endcase	
+
+
+end
+
+endmodule 

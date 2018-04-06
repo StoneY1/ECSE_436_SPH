@@ -1,0 +1,101 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'SW[0]'
+Slack : -13.502
+TNS   : -388.899
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -8.244
+TNS   : -434.349
+
+Type  : Slow Model Setup 'avconf:inst1|mI2C_CTRL_CLK'
+Slack : -3.216
+TNS   : -132.820
+
+Type  : Slow Model Setup 'avconf:inst1|LUT_INDEX[1]'
+Slack : -1.761
+TNS   : -24.386
+
+Type  : Slow Model Hold 'avconf:inst1|LUT_INDEX[1]'
+Slack : -1.240
+TNS   : -16.066
+
+Type  : Slow Model Hold 'SW[0]'
+Slack : 0.203
+TNS   : 0.000
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : 0.211
+TNS   : 0.000
+
+Type  : Slow Model Hold 'avconf:inst1|mI2C_CTRL_CLK'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'SW[0]'
+Slack : -1.380
+TNS   : -1.380
+
+Type  : Slow Model Minimum Pulse Width 'avconf:inst1|mI2C_CTRL_CLK'
+Slack : -0.500
+TNS   : -56.000
+
+Type  : Slow Model Minimum Pulse Width 'avconf:inst1|LUT_INDEX[1]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : 7.873
+TNS   : 0.000
+
+Type  : Fast Model Setup 'SW[0]'
+Slack : -6.175
+TNS   : -177.317
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -3.370
+TNS   : -168.513
+
+Type  : Fast Model Setup 'avconf:inst1|mI2C_CTRL_CLK'
+Slack : -1.284
+TNS   : -33.894
+
+Type  : Fast Model Setup 'avconf:inst1|LUT_INDEX[1]'
+Slack : -0.264
+TNS   : -2.622
+
+Type  : Fast Model Hold 'avconf:inst1|LUT_INDEX[1]'
+Slack : -0.856
+TNS   : -12.227
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : -0.344
+TNS   : -0.344
+
+Type  : Fast Model Hold 'SW[0]'
+Slack : -0.156
+TNS   : -1.811
+
+Type  : Fast Model Hold 'avconf:inst1|mI2C_CTRL_CLK'
+Slack : -0.134
+TNS   : -1.008
+
+Type  : Fast Model Minimum Pulse Width 'SW[0]'
+Slack : -1.380
+TNS   : -1.380
+
+Type  : Fast Model Minimum Pulse Width 'avconf:inst1|mI2C_CTRL_CLK'
+Slack : -0.500
+TNS   : -56.000
+
+Type  : Fast Model Minimum Pulse Width 'avconf:inst1|LUT_INDEX[1]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : 7.873
+TNS   : 0.000
+
+------------------------------------------------------------

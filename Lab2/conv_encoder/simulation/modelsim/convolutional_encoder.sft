@@ -1,0 +1,5 @@
+set tool_name "ModelSim-Altera (VHDL)"
+set corner_file_list {
+	{{"Slow Model"} {convolutional_encoder.vho convolutional_encoder_vhd.sdo}}
+	{{"Fast Model"} {convolutional_encoder_fast.vho convolutional_encoder_vhd_fast.sdo}}
+}

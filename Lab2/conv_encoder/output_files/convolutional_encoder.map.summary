@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Feb 15 16:26:01 2018
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Revision Name : convolutional_encoder
+Top-level Entity Name : conv_encode
+Family : Cyclone II
+Total logic elements : 481
+    Total combinational functions : 333
+    Dedicated logic registers : 346
+Total registers : 346
+Total pins : 4
+Total virtual pins : 0
+Total memory bits : 512
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

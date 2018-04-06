@@ -1,0 +1,2 @@
+//full butterfly stage edge metric module
+module full_stage_edge_top(CLK,r_3,r_4,edge_000,edge_011,edge_100,edge_111,temp_c,);
