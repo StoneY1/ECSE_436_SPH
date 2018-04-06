@@ -1,0 +1,16 @@
+//Edge metric calculator
+module start_edge_metric(CLK, r_bits, edge_00, edge_11, edge_10, edge_01);
+input CLK;
+input reg[1:0] r_bits;
+output reg[1:0] edge_00;
+output reg[1:0] edge_11;
+output reg[1:0] edge_10;
+output reg[1:0] edge_01;
+
+always@(posedge CLK)
+edge_00 <= r_bits;
+
+end
+
+
+endmodule

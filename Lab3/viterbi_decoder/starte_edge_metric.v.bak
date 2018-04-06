@@ -1,0 +1,2 @@
+//Edge metric calculator
+module start_edge_metric(r_bits, edge_00, edge_11, edge_10, edge_01)

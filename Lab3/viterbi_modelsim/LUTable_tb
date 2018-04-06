@@ -1,0 +1,17 @@
+module LUTable_tb (codeword, mapped_0, mapped_1, mapped_2, mapped_3, mapped_4, mapped_5, mapped_6, mapped_7);	
+input [7:0] codeword;
+output reg[7:0] mapped_0;
+output reg[7:0] mapped_1;
+output reg[7:0] mapped_2;
+output reg[7:0] mapped_3;
+output reg[7:0] mapped_4;
+output reg[7:0] mapped_5;
+output reg[7:0] mapped_6;
+output reg[7:0] mapped_7;
+
+always @* begin
+	input <= 8'b10010000;
+end
+
+
+endmodule
