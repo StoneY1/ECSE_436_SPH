@@ -2,3 +2,4 @@ incremental_db/
 db/
 simulation/
 output_files/
+viterbi_decoder.qsf
