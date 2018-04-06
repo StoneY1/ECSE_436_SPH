@@ -21,6 +21,19 @@ m2 <= m2<<1;
 
 edge_10 <= m1;
 edge_01 <= m2;
-edge_11 <= m1+m2+8'b00010000; //with addition of weights we finally perform two FLOPs --> -2m1-2m2+1 = (-2m1)+(-2m2)+1
+
+if(m1[7]==1 && m2[7]==1) begin
+	edge_11 <= {1'b1,(m1[6:0]+m2[6:0])}+8'b00010000; //two FLOPs --> -2m1-2m2+1 = (-2m1)+(-2m2)+1
+end else if (m1[7]==0 && m2[7]==0) begin
+	edge_11 <= {1'b0,(m1[6:0]+m2[6:0])}+8'b00010000; 
+end
+else begin
+	if (m1[6:0]>m2[6:0]) begin
+		edge_11 <= {m1[7],(m1[6:0]+m2[6:0])}+8'b00010000;
+	end
+	else begin
+		edge_11 <= {m2[7],(m1[6:0]+m2[6:0])}+8'b00010000;
+	end
+end
 end
 endmodule

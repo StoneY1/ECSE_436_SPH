@@ -20,9 +20,37 @@ m3[7] <= ~m3[7]; //bit flip, able to flip the sign of our created data structure
 m4[7] <= ~m4[7]; //bit flip, now just need to do bit shift.
 m3 <= m3<<1; //bit shift by one is equal to multiply by 2 without performing an actual FLOP, now we have -2m metric
 m4 <= m4<<1;
-edge_met <= m3+m4+8'b00010000; //two FLOPs --> -2m1-2m2+1 = (-2m1)+(-2m2)+1
+
+//calculate edge_met
+if(m3[7]==1 && m4[7]==1) begin
+	edge_met <= {1'b1,(m3[6:0]+m4[6:0])}+8'b00010000; //two FLOPs --> -2m1-2m2+1 = (-2m1)+(-2m2)+1
+end else if (m3[7]==0 && m4[7]==0) begin
+	edge_met <= {1'b0,(m3[6:0]+m4[6:0])}+8'b00010000; 
+end
+else begin
+	if (m3[6:0]>m4[6:0]) begin
+		edge_met <= {m3[7],(m3[6:0]+m4[6:0])}+8'b00010000;
+	end
+	else begin
+		edge_met <= {m4[7],(m3[6:0]+m4[6:0])}+8'b00010000;
+	end
+end
 path_011 <= edge_met; // edge_00 is a zero, so no addition needed
-path_100 <= edge_met+edge_11; //one FLOP, path from state 11 to state 00
+
+//calculate path_100. Since our data structure is sign-magnitude-esque, need to check sign bits and compare magnitudes
+if(edge_met[7]==1 && edge_11[7]==1) begin
+	path_100 <= {1'b1,(edge_met[6:0]+edge_11[6:0])}; //two FLOPs --> -2m1-2m2+1 = (-2m1)+(-2m2)+1
+end else if (edge_met[7]==0 && edge_11[7]==0) begin
+	path_100 <= {1'b0,(edge_met[6:0]+edge_11[6:0])};  
+end
+else begin
+	if (edge_met[6:0]>edge_11[6:0]) begin
+		path_100 <= {edge_met[7],(edge_met[6:0]+edge_11[6:0])}; 
+	end
+	else begin
+		path_100 <= {edge_11[7],(edge_met[6:0]+edge_11[6:0])};
+	end
+end
 
 //Now compare path lengths. For this part of the trellis, only need to check MSB of edge_0 and edge_1 to determine survivor paths
 if (path_011[7] == 1) begin //if MSB is 1, edge is negative and is shorter
