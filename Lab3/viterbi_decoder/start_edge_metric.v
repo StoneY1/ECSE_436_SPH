@@ -9,9 +9,11 @@ output reg[7:0] edge_10;
 output reg[7:0] edge_01;
 reg[7:0] m1;
 reg[7:0] m2;
+reg[7:0] one;
 
 always@(posedge CLK) begin
 edge_00 <= 8'd0;
+one <= 8'b00010000;
 m1 <= r1;
 m2 <= r2;
 m1[7] <= ~m1[7]; //bit flip, able to flip the sign of our created data structure without performing a FLOP.
@@ -22,18 +24,7 @@ m2 <= m2<<1;
 edge_10 <= m1;
 edge_01 <= m2;
 
-if(m1[7]==1 && m2[7]==1) begin
-	edge_11 <= {1'b1,(m1[6:0]+m2[6:0])}+8'b00010000; //two FLOPs --> -2m1-2m2+1 = (-2m1)+(-2m2)+1
-end else if (m1[7]==0 && m2[7]==0) begin
-	edge_11 <= {1'b0,(m1[6:0]+m2[6:0])}+8'b00010000; 
-end
-else begin
-	if (m1[6:0]>m2[6:0]) begin
-		edge_11 <= {m1[7],(m1[6:0]+m2[6:0])}+8'b00010000;
-	end
-	else begin
-		edge_11 <= {m2[7],(m1[6:0]+m2[6:0])}+8'b00010000;
-	end
-end
+edge_11 <= $signed(m1)+$signed(m2)+$signed(one); //two FLOPs --> -2m1-2m2+1 = (-2m1)+(-2m2)+1
+
 end
 endmodule

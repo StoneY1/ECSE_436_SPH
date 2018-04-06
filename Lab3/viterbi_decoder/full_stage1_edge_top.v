@@ -11,9 +11,11 @@ reg[7:0] m4;
 reg[7:0] edge_met;
 reg[7:0] path_011;
 reg[7:0] path_100;
+reg[7:0] one;
 
 always@(posedge CLK) begin
 //calculating edge metrics
+one <= 8'b00010000;
 m3 <= r3;
 m4 <= r4;
 m3[7] <= ~m3[7]; //bit flip, able to flip the sign of our created data structure without performing a FLOP.
@@ -22,35 +24,11 @@ m3 <= m3<<1; //bit shift by one is equal to multiply by 2 without performing an 
 m4 <= m4<<1;
 
 //calculate edge_met
-if(m3[7]==1 && m4[7]==1) begin
-	edge_met <= {1'b1,(m3[6:0]+m4[6:0])}+8'b00010000; //two FLOPs --> -2m1-2m2+1 = (-2m1)+(-2m2)+1
-end else if (m3[7]==0 && m4[7]==0) begin
-	edge_met <= {1'b0,(m3[6:0]+m4[6:0])}+8'b00010000; 
-end
-else begin
-	if (m3[6:0]>m4[6:0]) begin
-		edge_met <= {m3[7],(m3[6:0]+m4[6:0])}+8'b00010000;
-	end
-	else begin
-		edge_met <= {m4[7],(m3[6:0]+m4[6:0])}+8'b00010000;
-	end
-end
+edge_met <= $signed(m3)+$signed(m4)+$signed(one);
 path_011 <= edge_met; // edge_00 is a zero, so no addition needed
 
-//calculate path_100. Since our data structure is sign-magnitude-esque, need to check sign bits and compare magnitudes
-if(edge_met[7]==1 && edge_11[7]==1) begin
-	path_100 <= {1'b1,(edge_met[6:0]+edge_11[6:0])}; //two FLOPs --> -2m1-2m2+1 = (-2m1)+(-2m2)+1
-end else if (edge_met[7]==0 && edge_11[7]==0) begin
-	path_100 <= {1'b0,(edge_met[6:0]+edge_11[6:0])};  
-end
-else begin
-	if (edge_met[6:0]>edge_11[6:0]) begin
-		path_100 <= {edge_met[7],(edge_met[6:0]+edge_11[6:0])}; 
-	end
-	else begin
-		path_100 <= {edge_11[7],(edge_met[6:0]+edge_11[6:0])};
-	end
-end
+//calculate path_100. Since our data structure is sign-magnitude-esque, using sign system function
+path_100 <= $signed(edge_met)+$signed(edge_11);
 
 //Now compare path lengths. For this part of the trellis, only need to check MSB of edge_0 and edge_1 to determine survivor paths
 if (path_011[7] == 1) begin //if MSB is 1, edge is negative and is shorter
