@@ -16,10 +16,10 @@ edge_00 <= 8'd0;
 one <= 8'b00010000;
 m1 <= r1;
 m2 <= r2;
-m1[7] <= ~m1[7]; //bit flip, able to flip the sign of our created data structure without performing a FLOP.
-m2[7] <= ~m2[7]; //bit flip, now just need to do bit shift.
 m1 <= m1<<1; //bit shift by one is equal to multiply by 2 without performing an actual FLOP, now we have -2m metric
 m2 <= m2<<1;
+m1[7] <= ~r1[7]; //bit flip, able to flip the sign of our created data structure without performing a FLOP.
+m2[7] <= ~r2[7]; //bit flip, now just need to do bit shift.
 
 edge_10 <= m1;
 edge_01 <= m2;

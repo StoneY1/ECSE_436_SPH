@@ -18,10 +18,10 @@ always@(posedge CLK) begin
 one <= 8'b00010000;
 m5 <= r5;
 m6 <= r6;
-m5[7] <= ~m5[7]; //bit flip, able to flip the sign of our created data structure without performing a FLOP.
-m6[7] <= ~m6[7]; //bit flip, now just need to do bit shift.
 m5 <= m5<<1; //bit shift by one is equal to multiply by 2 without performing an actual FLOP, now we have -2m metric
 m6 <= m6<<1;
+m5[7] <= ~r5[7]; //bit flip, able to flip the sign of our created data structure without performing a FLOP.
+m6[7] <= ~r6[7]; //bit flip, now just need to do bit shift.
 
 edge_met <= $signed(m5)+$signed(m6)+$signed(one);
 path_011 <= $signed(edge_met)+$signed(survivor_00);

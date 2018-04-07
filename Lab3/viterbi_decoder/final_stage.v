@@ -16,10 +16,10 @@ temp_codeword <= {temp_c00,2'b00};
 //edge metric calcs
 m7 <= r7;
 m8 <= r8;
-m7[7] <= ~m7[7]; //bit flip, able to flip the sign of our created data structure without performing a FLOP.
-m8[7] <= ~m8[7]; //bit flip, now just need to do bit shift.
 m7 <= m7<<1; //bit shift by one is equal to multiply by 2 without performing an actual FLOP, now we have -2m metric
 m8 <= m8<<1;
+m7[7] <= ~r7[7]; //bit flip, able to flip the sign of our created data structure without performing a FLOP.
+m8[7] <= ~r8[7]; //bit flip, now just need to do bit shift.
 
 edge_met<= $signed(m7)+$signed(m8)+$signed(one);
 

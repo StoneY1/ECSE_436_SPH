@@ -842,16 +842,6 @@ SIGNAL("shortest_path[0]")
 	PARENT = "shortest_path";
 }
 
-SIGNAL("CLK")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
 SIGNAL("code_in")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -1030,6 +1020,16 @@ SIGNAL("code_out[0]")
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
 	PARENT = "code_out";
+}
+
+SIGNAL("CLK")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
 }
 
 TRANSITION_LIST("r1[7]")
@@ -1680,20 +1680,6 @@ TRANSITION_LIST("shortest_path[0]")
 	}
 }
 
-TRANSITION_LIST("CLK")
-{
-	NODE
-	{
-		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 20;
-			LEVEL 0 FOR 25.0;
-			LEVEL 1 FOR 25.0;
-		}
-	}
-}
-
 TRANSITION_LIST("code_in[7]")
 {
 	NODE
@@ -1708,7 +1694,7 @@ TRANSITION_LIST("code_in[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
@@ -1726,7 +1712,7 @@ TRANSITION_LIST("code_in[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -1835,6 +1821,20 @@ TRANSITION_LIST("code_out[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("CLK")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 20;
+			LEVEL 0 FOR 25.0;
+			LEVEL 1 FOR 25.0;
+		}
 	}
 }
 

@@ -1,13 +1,13 @@
-{C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/Lab 3/viterbi_modelsim/LUTable.v} {1 {vlog -work work -stats=none {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/Lab 3/viterbi_modelsim/LUTable.v}
+{C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/Lab 3/viterbi_modelsim/LUTable_tb.v} {0 {vlog -work work -stats=none {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/Lab 3/viterbi_modelsim/LUTable_tb.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+** Error: (vlog-13069) C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/Lab 3/viterbi_modelsim/LUTable_tb.v(1): near "?": syntax error, unexpected '?', expecting class.
+
+
+} {3.0 4.0} {}} {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/LUTable.v} {1 {vlog -work work -stats=none {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/LUTable.v}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module LUTable
 
 Top level modules:
 	LUTable
 
-} {} {}} {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/Lab 3/viterbi_modelsim/LUTable_tb.v} {0 {vlog -work work -stats=none {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/Lab 3/viterbi_modelsim/LUTable_tb.v}
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-** Error: (vlog-13069) C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/Lab 3/viterbi_modelsim/LUTable_tb.v(1): near "?": syntax error, unexpected '?', expecting class.
-
-
-} {3.0 4.0} {}}
+} {} {}}
