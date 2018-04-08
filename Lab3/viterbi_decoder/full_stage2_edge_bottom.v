@@ -14,19 +14,74 @@ reg[7:0] path_1010;
 reg[7:0] path_0110;
 reg[7:0] path_0101;
 
-always@(posedge CLK) begin
+//always@(posedge CLK) begin
+always@* begin
 //calculating edge metrics
-m5 <= r5;
-m6 <= r6;
-m5[7] <= ~m5[7]; //bit flip, able to flip the sign of our created data structure without performing a FLOP.
-m6[7] <= ~m6[7]; //bit flip, now just need to do bit shift.
-m5 <= m5<<1; //bit shift by one is equal to multiply by 2 without performing an actual FLOP, now we have -2m metric
-m6 <= m6<<1;
+m5 <= r5<<1; //bit shift by one is equal to multiply by 2 without performing an actual FLOP, now we have -2m metric
+m6 <= r6<<1;
+m5[7] <= ~r5[7]; //bit flip, able to flip the sign of our created data structure without performing a FLOP.
+m6[7] <= ~r6[7]; //bit flip, now just need to do bit shift.
 
-path_1001 <= $signed(m5)+$signed(survivor_10);
-path_1010 <= $signed(m6)+$signed(survivor_10);
-path_0110 <= $signed(m5)+$signed(survivor_01);
-path_0101 <= $signed(m6)+$signed(survivor_01);
+//path_1001 = m5 + survivor_10
+if(m5[7]==1 && survivor_10[7]==1) begin
+	path_1001 <= {1'b1,(m5[6:0]+survivor_10[6:0])}; 
+end else if (m5[7]==0 && survivor_10[7]==0) begin
+	path_1001 <= {1'b0,(m5[6:0]+survivor_10[6:0])};  
+end
+else begin
+	if (m5[6:0]>survivor_10[6:0]) begin
+		path_1001 <= {m5[7],(m5[6:0]-survivor_10[6:0])}; 
+	end
+	else begin
+		path_1001 <= {survivor_10[7],(survivor_10[6:0]+m5[6:0])};
+	end
+end
+
+//path_1010 = m6 + suvivor_10
+if(m6[7]==1 && survivor_10[7]==1) begin
+	path_1001 <= {1'b1,(m6[6:0]+survivor_10[6:0])}; 
+end else if (m6[7]==0 && survivor_10[7]==0) begin
+	path_1010 <= {1'b0,(m6[6:0]+survivor_10[6:0])};  
+end
+else begin
+	if (m6[6:0]>survivor_10[6:0]) begin
+		path_1010 <= {m6[7],(m6[6:0]-survivor_10[6:0])}; 
+	end
+	else begin
+		path_1010 <= {survivor_10[7],(survivor_10[6:0]+m6[6:0])};
+	end
+end
+
+//path_0110 = m5 + suvivor_01
+if(m5[7]==1 && survivor_01[7]==1) begin
+	path_1001 <= {1'b1,(m5[6:0]+survivor_01[6:0])}; 
+end else if (m5[7]==0 && survivor_01[7]==0) begin
+	path_0110 <= {1'b0,(m5[6:0]+survivor_01[6:0])};  
+end
+else begin
+	if (m5[6:0]>survivor_01[6:0]) begin
+		path_0110 <= {m5[7],(m5[6:0]-survivor_01[6:0])}; 
+	end
+	else begin
+		path_0110 <= {survivor_01[7],(survivor_01[6:0]+m5[6:0])};
+	end
+end
+
+
+//path_0101 = m6 + survivor_01
+if(m6[7]==1 && survivor_01[7]==1) begin
+	path_1001 <= {1'b1,(m6[6:0]+survivor_01[6:0])}; 
+end else if (m6[7]==0 && survivor_01[7]==0) begin
+	path_0101 <= {1'b0,(m6[6:0]+survivor_01[6:0])};  
+end
+else begin
+	if (m6[6:0]>survivor_01[6:0]) begin
+		path_0101 <= {m6[7],(m6[6:0]-survivor_01[6:0])}; 
+	end
+	else begin
+		path_0101 <= {survivor_01[7],(survivor_01[6:0]+m6[6:0])};
+	end
+end
 
 //Now compare path lengths. One FLOP per if statement (two FLOPs)
 if ($signed(path_1010) < $signed(path_0110)) begin 
