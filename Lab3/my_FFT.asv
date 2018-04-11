@@ -1,0 +1,91 @@
+clear;
+%Jessica Udo, Stone Yun
+
+%FFT using general form
+function Xk = my_FFT(x,N)
+if (mod(N,2)~= 0)
+    printf('N must be a multiple of 2');
+end
+%only works if N = 2^k
+N = numel(x); %returns the number of elements n in array p
+xp = x(1:2:end);
+xpp = x(2:2:end);
+if N>=8
+    Xp = myFFT(xp);
+    Xpp = myFFT(xpp);
+    X = zeros(N,1);
+    Wn = exp(-1i*2*pi*((0:N/2-1)')/N);
+    tmp = Wn .* Xpp;
+    X = [(Xp + tmp);(Xp -tmp)];
+else
+    switch N
+        case 2
+            X = [1 1;1 -1]*x;
+        case 4
+            X = [1 0 1 0; 0 1 0 -1i; 1 0 -1 0;0 1 0 1i]*[1 0 1 0;1 0 -1 0;0 1 0 1;0 1 0 -1]*x;
+        otherwise
+            error('N not correct.');
+    end
+end
+end
+
+% mm=[];
+% A=10;
+% fs=1000;
+% Ts=1/fs;
+% t=(1:1000)*Ts;
+% y=10*sin(2*pi*200*t)+5*sin(2*pi*400*t)+12*sin(2*pi*300*t);
+% N=length(t);
+% for(k=1:N)
+%     for(n=1:N)
+%         y1(n)=y(n).*exp(-j*2*pi*((-N/2)+n-1)*((-N/2)+k-1)/N);
+%     end
+%     mm=[mm sum(y1)];
+% end
+%
+% length(mm);
+% f=fs.*(-N/2:N/2-1)/N;
+% figure(1)
+% plot(f,2*abs(mm)/N);
+% title('Frequency spectrum for given signal without FFT biltin function');
+% xlabel('Frequency(Hz)');
+% ylabel('Amplitude(volt)');
+
+
+% %XXXXXXXXXXXXXXXXXXXXXXXXXX FFT with biltin function XXXXXXXXXXXXXXXXXXXXXX
+% mm=[];
+% A=10;
+% fs=1000;
+% Ts=1/fs;
+% t=(1:1000)*Ts;
+% y=10*sin(2*pi*200*t)+5*sin(2*pi*400*t)+12*sin(2*pi*300*t);
+% N=length(t);
+% N=length(t);
+% yy=fft(y);
+% yyy=fftshift(yy);
+% f=fs.*(-N/2:N/2-1)/N;
+% figure(2)
+% plot(f,(2*abs(yyy)/N));
+% title('Frequency spectrum for given signal with FFT biltin function (BF)');
+% xlabel('Frequency(Hz)');
+% ylabel('Amplitude(volt)');
+
+
+% %XXXXXXXXXXXXXXXXX FFT with biltin function and zero padding XXXXXXXXXXXXX
+% %mm=[];
+% %A=10;
+% fs=1000;
+% Ts=1/fs;
+% t=(1:1000)*Ts;
+% y=10*sin(2*pi*200*t)+5*sin(2*pi*400*t)+12*sin(2*pi*300*t);
+% N= 2^nextpow2(1000);
+%
+% yy =fft(y,N);
+% yyy=fftshift(yy);
+% f=fs.*(-N/2:N/2-1)/N;
+% figure(3)
+% plot(f,(2*abs(yyy)/N));
+% title('Frequency spectrum for given signal with FFT(BF)and zero padding');
+% xlabel('Frequency(Hz)');
+% ylabel('Amplitude(volt)');
+end
