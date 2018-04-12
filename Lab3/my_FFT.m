@@ -2,8 +2,6 @@
  
 function y = my_FFT(x)
  
-global sum_temp mul_temp
- 
 N = length(x);
 W = exp(-2 * pi * 1i / N) .^ (0 : N / 2 - 1);
  
@@ -14,6 +12,4 @@ else
     y_bottom    = my_FFT(x(2 : 2 : N));
     z           = W .* y_bottom;
     y           = [y_top + z, y_top - z];
-    sum_temp    = sum_temp + 6 * (N / 2);
-    mul_temp    = mul_temp + 4 * (N / 2);
 end
