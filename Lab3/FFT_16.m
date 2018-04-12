@@ -7,14 +7,14 @@ function [y]=FFT_16(x)
     y  = zeros(16,1);
     
     %stage 1
-    for ind = 0:1:7
+    for ind = 0:7
         twiddle1=exp(-2*pi*j*ind*1/16);
         x1(ind+1) = x(ind+1)  + x(ind+9);
         x1(ind+9) = (x(ind+1) - x(ind+9))*twiddle1;
     end
     
     %stage 2
-    for ind = 0:1:3
+    for ind = 0:3
         twiddle2=exp(-2*pi*j*ind*1/8);
         x2(ind+1)  = x1(ind+1)  + x1(ind+5);
         x2(ind+5)  = (x1(ind+1) - x1(ind+5))*twiddle2;
@@ -23,7 +23,7 @@ function [y]=FFT_16(x)
     end
     
     %stage 3
-    for ind = 0:1:1
+    for ind = 0:1
         twiddle3=exp(-2*pi*j*ind*1/4);
         x3(ind+1)  = x2(ind+1)  + x2(ind+3);
         x3(ind+3)  = (x2(ind+1) - x2(ind+3))*twiddle3;
