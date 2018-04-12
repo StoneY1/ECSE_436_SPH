@@ -1,0 +1,6 @@
+%%my_FFT_Stone
+M = 3
+fs=1000;
+Ts=1/fs;
+t=(1:1000)*Ts;
+y=10*sin(2*pi*200*t)+5*sin(2*pi*400*t)+12*sin(2*pi*300*t);

@@ -8,7 +8,7 @@ output reg[7:0] mapped_4;
 output reg[7:0] mapped_5;
 output reg[7:0] mapped_6;
 output reg[7:0] mapped_7;
-parameter C = 7'b001000;
+parameter C = 7'b0010000;
 
 always @* begin 
 mapped_0 <= {~codeword[7], C};

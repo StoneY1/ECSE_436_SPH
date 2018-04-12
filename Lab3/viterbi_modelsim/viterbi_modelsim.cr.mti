@@ -1,13 +1,48 @@
-{C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/Lab 3/viterbi_modelsim/LUTable.v} {1 {vlog -work work -stats=none {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/Lab 3/viterbi_modelsim/LUTable.v}
+{C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/full_stage2_edge_top.v} {1 {vlog -work work -stats=none {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/full_stage2_edge_top.v}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module LUTable
+-- Compiling module full_stage2_edge_top
 
 Top level modules:
-	LUTable
+	full_stage2_edge_top
+
+} {} {}} {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/full_stage1_edge_bottom.v} {1 {vlog -work work -stats=none {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/full_stage1_edge_bottom.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module full_stage1_edge_bottom
+
+Top level modules:
+	full_stage1_edge_bottom
+
+} {} {}} {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/full_stage2_edge_bottom.v} {1 {vlog -work work -stats=none {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/full_stage2_edge_bottom.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module full_stage2_edge_bottom
+
+Top level modules:
+	full_stage2_edge_bottom
 
 } {} {}} {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/Lab 3/viterbi_modelsim/LUTable_tb.v} {0 {vlog -work work -stats=none {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/Lab 3/viterbi_modelsim/LUTable_tb.v}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 ** Error: (vlog-13069) C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/Lab 3/viterbi_modelsim/LUTable_tb.v(1): near "?": syntax error, unexpected '?', expecting class.
 
 
-} {3.0 4.0} {}}
+} {3.0 4.0} {}} {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/final_stage.v} {1 {vlog -work work -stats=none {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/final_stage.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module final_stage
+
+Top level modules:
+	final_stage
+
+} {} {}} {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/LUTable.v} {1 {vlog -work work -stats=none {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/LUTable.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module LUTable
+
+Top level modules:
+	LUTable
+
+} {} {}} {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/start_edge_metric.v} {1 {vlog -work work -stats=none {C:/Users/MS/Documents/McGill/2018_Winter/ECSE 436/SPH/Lab3/viterbi_decoder/start_edge_metric.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module start_edge_metric
+
+Top level modules:
+	start_edge_metric
+
+} {} {}}

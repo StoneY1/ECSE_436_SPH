@@ -1,0 +1,6 @@
+FPGA complex numbers for FFT
+specify two vectors
+one for real and then imaginary [3:0] each
+Need to create a complex adder that will add respective vectors
+
+structure is the same as Matlab, just convert into Verilog
