@@ -1721,7 +1721,7 @@ TRANSITION_LIST("code_in[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -1829,12 +1829,7 @@ TRANSITION_LIST("CLK")
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 20;
-			LEVEL 0 FOR 25.0;
-			LEVEL 1 FOR 25.0;
-		}
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
